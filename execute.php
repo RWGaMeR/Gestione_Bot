@@ -24,8 +24,8 @@ $response = "";
 
 date_default_timezone_set('Europe/Rome');
 
-$time = (string)date('H:i');
-$date = (string)date("d/m/y");
+$time = date('H:i');
+$date = date("d/m/y");
 
 if(strpos($text, "/orario") === 0)
 {
@@ -51,6 +51,10 @@ elseif(strpos($text, "/chat_id") === 0){
 if($_SESSION["orario_impostato"] == $time){
 	$response = $_SESSION["risposta"];
 	$chatId = -399849309;
+}
+
+if(strpos($text, "/test") === 0){
+	$response = "Test:" . $_SESSION["orario_imposato"] . $_SESSION["risposta"];
 }
 /* function post_message($string){
 	$response = "ciao";//rtrim('/pianifica', $string);
