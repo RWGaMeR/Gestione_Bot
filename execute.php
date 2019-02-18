@@ -16,12 +16,18 @@ $username = isset($message['chat']['username']) ? $message['chat']['username'] :
 $date = isset($message['date']) ? $message['date'] : "";
 $text = isset($message['text']) ? $message['text'] : "";
 
-$text = trim($text);
-$text = strtolower($text);
+$response = "";
 
-$time = time();
+date_default_timezone_set('Europe/Rome');
 
-if($text == "/start")
+$time = (string)date('H:i');
+$date = (string)date("d/m/y");
+
+if(strpos($text, "/orario") === 0)
 {
-	echo "Ciao";
+	$response = " Sono le ore $time" ;
+}
+elseif(strpos($text, "/data") === 0)
+{
+	$response = " Sono le ore $date" ;
 }
