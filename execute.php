@@ -35,7 +35,8 @@ elseif(strpos($text, "/data") === 0)
 	$response = " Sono le ore $date" ;
 }
 elseif(strpos($text, "/pianifica") === 0){
-	post_message($text);
+	post_message("ciao");
+	$response = "Test";
 }
 
 function post_message($string){
