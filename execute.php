@@ -50,7 +50,7 @@ elseif(strpos($text, "/chat_id") === 0){
 
 if($_SESSION["orario_impostato"] == $time){
 	$response = $_SESSION["risposta"];
-	$chatId = "";
+	$chatId = 369066119;
 }
 /* function post_message($string){
 	$response = "ciao";//rtrim('/pianifica', $string);
