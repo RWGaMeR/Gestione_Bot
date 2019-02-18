@@ -36,12 +36,14 @@ elseif(strpos($text, "/data") === 0)
 }
 elseif(strpos($text, "/pianifica") === 0){
 	post_message($text);
-	$response = $risposta;
+	//$response = $risposta;
 }
 
 function post_message($string){
-	$risposta = str_replace("/pianifica ", "", $string);
-	return $risposta;
+	$response = rtrim('/pianifica', $string);
+	return $response;
+	//	$risposta = str_replace("/pianifica ", "", $string);
+//	return $risposta;
 }
 
 
