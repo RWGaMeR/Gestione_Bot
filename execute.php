@@ -39,7 +39,7 @@ elseif(strpos($text, "/pianifica") === 0){
 }
 
 function post_message($string){
-	$response = $string;
+	$response = "$string";
 }
 
 
