@@ -35,12 +35,13 @@ elseif(strpos($text, "/data") === 0)
 	$response = " Sono le ore $date" ;
 }
 elseif(strpos($text, "/pianifica") === 0){
-	post_message("ciao");
-	$response = "Test";
+	post_message($text);
+	$response = $risposta;
 }
 
 function post_message($string){
-	$response = "$string";
+	$risposta = str_replace("/pianifica ", "", $string);
+	
 }
 
 
