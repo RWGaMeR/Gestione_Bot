@@ -34,8 +34,19 @@ elseif(strpos($text, "/data") === 0)
 {
 	$response = " Sono le ore $date" ;
 }
+elseif(strpos($text, "/pianifica") === 0){
+	post_message($text);
+}
+
+function post_message($string){
+	$response = $string;
+}
+
+
+
 
 header("Content-Type: application/json");
 $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
+?>
