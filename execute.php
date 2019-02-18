@@ -40,7 +40,7 @@ elseif(strpos($text, "/pianifica") === 0){
 }
 
 function post_message($string){
-	$response = rtrim('/pianifica', $string);
+	$response = "$string";//rtrim('/pianifica', $string);
 	return $response;
 	//	$risposta = str_replace("/pianifica ", "", $string);
 //	return $risposta;
