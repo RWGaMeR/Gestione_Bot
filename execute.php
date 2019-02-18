@@ -35,7 +35,9 @@ elseif(strpos($text, "/data") === 0)
 	$response = " Sono le ore $date" ;
 }
 elseif(strpos($text, "/pianifica") === 0){
-	$response = rtrim($text, "/pianifica ");
+	$risposta = ltrim($text, "/pianifica ");
+	$orario_impostato = substr($risposta, 0, 4);
+	$response = "Hai impostato l'orario: $orario_impostato";
 }
 
 /* function post_message($string){
