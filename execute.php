@@ -1,4 +1,5 @@
 <?php
+session_start();
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
 
@@ -36,10 +37,21 @@ elseif(strpos($text, "/data") === 0)
 }
 elseif(strpos($text, "/pianifica") === 0){
 	$risposta = ltrim($text, "/pianifica ");
-	$orario_impostato = substr($risposta, 0, 4);
-	$response = "Hai impostato l'orario: $orario_impostato";
+	$_SESSION["orario_impostato"] = substr($risposta, 0, 5);
+	$_SESSION["risposta"] = substr($risposta, 6);
+//	$orario_impostato = trim($orario_impostato, ":");
+	
+	
+	$response = "Hai impostato l'orario: " . $_SESSION["orario_impostato"] . "\n \n" . $_SESSION["risposta"];
+} 
+elseif(strpos($text, "/chat_id") === 0){
+	$response = $chatId;
 }
 
+if($_SESSION["orario_impostato"] == $time){
+	$response = $_SESSION["risposta"];
+	$chatId = "";
+}
 /* function post_message($string){
 	$response = "ciao";//rtrim('/pianifica', $string);
 	return $response;
