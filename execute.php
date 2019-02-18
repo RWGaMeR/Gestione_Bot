@@ -41,7 +41,7 @@ elseif(strpos($text, "/pianifica") === 0){
 
 function post_message($string){
 	$risposta = str_replace("/pianifica ", "", $string);
-	
+	return $risposta;
 }
 
 
