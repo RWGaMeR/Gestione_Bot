@@ -21,7 +21,7 @@ $text = strtolower($text);
 
 $time = time();
 
-if($text == "/start")
+if($text == "start")
 {
 	echo $time;
 }
