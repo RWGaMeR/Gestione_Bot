@@ -59,7 +59,7 @@ if($time == $_SESSION["orario_impostato"]){
 if(strpos($text, "/test") === 0){
 //	$_SESSION["orario_imposato"];
 //	$_SESSION["risposta"];
-	$response = "Test: $orario_impostato \n $risposta"
+	$response = "Test: $orario_impostato \n $risposta";
 }
 /* function post_message($string){
 	$response = "ciao";//rtrim('/pianifica', $string);
