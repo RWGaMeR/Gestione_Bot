@@ -65,7 +65,7 @@ elseif(strpos($text, "/chat_id") === 0){
 
 include 'orario_impostato.php';
 include 'filename.php';
-if("$time" == "$orario_impostato"){
+if($time == $orario_impostato){
 	$response = $risposta;
 	$chatId = -399849309;
 }
