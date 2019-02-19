@@ -63,8 +63,8 @@ elseif(strpos($text, "/chat_id") === 0){
 	$response = $chatId;
 }
 
-include 'orario_impostato.php'
-include 'filename.php'
+include 'orario_impostato.php';
+include 'filename.php';
 if($time == $orario_impostato){
 	$response = $risposta;
 	$chatId = -399849309;
