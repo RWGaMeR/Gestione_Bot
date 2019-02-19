@@ -3,6 +3,7 @@ session_start();
 ?>
 
 <?php
+session_start();
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
 
@@ -57,8 +58,8 @@ if($time == $_SESSION["orario_impostato"]){
 }
 
 if(strpos($text, "/test") === 0){
-//	$_SESSION["orario_imposato"];
-//	$_SESSION["risposta"];
+	$orario_impostato = $_SESSION["orario_imposato"];
+	$risposta = $_SESSION["risposta"];
 	$response = "Test: $orario_impostato \n $risposta";
 }
 /* function post_message($string){
