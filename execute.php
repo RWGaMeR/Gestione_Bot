@@ -1,8 +1,10 @@
 <?php
+session_set_cookie_params( $lifetime, '/Gestione_Bot/' );
 session_start();
 ?>
 
 <?php
+session_set_cookie_params( $lifetime, '/Gestione_Bot/' );
 session_start();
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
