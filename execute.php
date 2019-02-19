@@ -1,11 +1,11 @@
 <?php
-session_set_cookie_params( $lifetime, '/RWGaMeR/Gestione_Bot');
-session_start();
+//session_set_cookie_params( $lifetime, '/RWGaMeR/Gestione_Bot');
+//session_start();
 ?>
 
 <?php
-session_set_cookie_params( $lifetime, '/RWGaMeR/Gestione_Bot' );
-session_start();
+//session_set_cookie_params( $lifetime, '/RWGaMeR/Gestione_Bot' );
+//session_start();
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
 
@@ -42,6 +42,10 @@ elseif(strpos($text, "/data") === 0)
 	$response = " Sono le ore $date" ;
 }
 elseif(strpos($text, "/pianifica") === 0){
+	$prova = "Anything";
+	$var_str = var_export($prova, true);
+	$var = "<?php\n\n\$prova = $var_str;\n\n?>";
+	file_put_contents('filename.php', $var);
 	$risposta = ltrim($text, "/pianifica ");
 	$_SESSION["orario_impostato"] = substr($risposta, 0, 5);
 	$_SESSION["risposta"] = substr($risposta, 6);
@@ -60,9 +64,10 @@ if($time == $_SESSION["orario_impostato"]){
 }
 
 if(strpos($text, "/test") === 0){
+	include 'filename.php';
 	$orario_impostato = $_SESSION["orario_imposato"];
 	$risposta = $_SESSION["risposta"];
-	$response = "Test: $orario_impostato \n $risposta";
+	$response = "Test: $orario_impostato \n $risposta \n $prova";
 }
 /* function post_message($string){
 	$response = "ciao";//rtrim('/pianifica', $string);
