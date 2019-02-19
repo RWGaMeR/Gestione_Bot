@@ -44,6 +44,11 @@ elseif(strpos($text, "/data") === 0)
 elseif(strpos($text, "/pianifica") === 0){
 	$risposta = ltrim($text, "/pianifica ");
 	$orario_impostato = substr($risposta, 0, 5);
+	
+	$var_str = var_export($orario_impostato, true);
+	$var = "<?php\n\n\$orario_impostato = $var_str;\n\n?>";
+	file_put_contents('orario_impostato.php', $var);
+	
 	$risposta = substr($risposta, 6);
 	
 	$var_str = var_export($risposta, true);
@@ -58,8 +63,10 @@ elseif(strpos($text, "/chat_id") === 0){
 	$response = $chatId;
 }
 
-if($time == $_SESSION["orario_impostato"]){
-	$response = $_SESSION["risposta"];
+include 'orario_impostato.php'
+include 'filename.php'
+if($time == $orario_impostato){
+	$response = $risposta;
 	$chatId = -399849309;
 }
 
