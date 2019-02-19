@@ -65,7 +65,7 @@ elseif(strpos($text, "/chat_id") === 0){
 
 include 'orario_impostato.php';
 include 'filename.php';
-if($time == $orario_impostato){
+if((string)$time == (string)$orario_impostato){
 	$response = $risposta;
 	$chatId = -399849309;
 }
@@ -75,6 +75,10 @@ if(strpos($text, "/test") === 0){
 	//$orario_impostato = $_SESSION["orario_imposato"];
 	//$risposta = $_SESSION["risposta"];
 	$response = "Test: $orario_impostato \n $risposta ";
+}
+
+function prova($nome){
+	
 }
 /* function post_message($string){
 	$response = "ciao";//rtrim('/pianifica', $string);
