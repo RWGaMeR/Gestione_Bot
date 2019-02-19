@@ -74,7 +74,9 @@ if(strpos($text, "/test") === 0){
 	include 'filename.php';
 	//$orario_impostato = $_SESSION["orario_imposato"];
 	//$risposta = $_SESSION["risposta"];
-	$response = "Test: $orario_impostato \n $risposta ";
+	$l_orario = strlen($time);
+	$l_orario_impostato = strlen($orario_impostato);
+	$response = "Test: $orario_impostato \n $risposta \n Lunghezza orario: $l_orario \n Lunghezza orario impostato: $l_orario_impostato";
 }
 
 function prova($nome){
