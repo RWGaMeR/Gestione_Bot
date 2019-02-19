@@ -51,13 +51,15 @@ elseif(strpos($text, "/chat_id") === 0){
 	$response = $chatId;
 }
 
-if($_SESSION["orario_impostato"] == $time){
+if($time == $_SESSION["orario_impostato"]){
 	$response = $_SESSION["risposta"];
 	$chatId = -399849309;
 }
 
 if(strpos($text, "/test") === 0){
-	$response = "Test:" . $_SESSION["orario_imposato"] . $_SESSION["risposta"];
+//	$_SESSION["orario_imposato"];
+//	$_SESSION["risposta"];
+	$response = "Test: $orario_impostato \n $risposta"
 }
 /* function post_message($string){
 	$response = "ciao";//rtrim('/pianifica', $string);
